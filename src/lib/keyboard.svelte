@@ -16,7 +16,7 @@
 
 <div class="relative mx-auto mt-16 flex w-fit shadow-[10px_10px_0_0_var(--color-stone-500)]">
 	<div
-		class="flex flex-col border-4 border-r-0 border-stone-700 bg-stone-300 pt-7 text-sm lg:text-base xl:text-lg"
+		class="3xl:text-lg flex flex-col border-4 border-r-0 border-stone-700 bg-stone-300 pt-7 text-sm 2xl:text-base"
 	>
 		<div class="flex h-8 items-center justify-center bg-red-200 pr-2 pl-3">x</div>
 		<div class="flex h-8 items-center justify-center bg-orange-100 pr-2 pl-3">#</div>
@@ -53,7 +53,7 @@
 				{/if}
 			{/each}
 		</div>
-		<table class="3xl:text-lg absolute top-8 left-1 text-center align-middle text-sm lg:text-base">
+		<table class="3xl:text-lg absolute top-8 left-1 text-center align-middle text-sm 2xl:text-base">
 			<tbody>
 				{#each { length: 5 }, row}
 					<tr class="h-8">
@@ -104,13 +104,13 @@
 				</tr>
 			</tbody>
 		</table>
+		<div
+			class="3xl:left-7.5 absolute top-1 left-3.5 h-110 w-16 border-r-3 border-dashed border-stone-500"
+		></div>
+		<div
+			class="3xl:left-348.5 absolute top-1 left-282.5 h-110 w-16 border-r-3 border-dashed border-stone-500"
+		></div>
 	</div>
-	<div
-		class="3xl:left-30.25 absolute top-1 left-26.25 h-110 w-16 border-r-3 border-dashed border-stone-500"
-	></div>
-	<div
-		class="3xl:left-371.25 absolute top-1 left-305.25 h-110 w-16 border-r-3 border-dashed border-stone-500"
-	></div>
 	<div class="absolute -bottom-12 text-xs md:text-sm xl:text-base">
 		* ordered as a sequence of fifths
 	</div>

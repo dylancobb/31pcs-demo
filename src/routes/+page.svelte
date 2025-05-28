@@ -8,16 +8,35 @@
 		a simple system for representing, querying and manipulating
 	</div>
 	<div class="flex flex-wrap justify-center gap-4 text-sm lg:text-base xl:text-lg">
-		<div class="bg-green-200 px-3 py-1.5 shadow-[5px_5px_0_0_#44403b] md:px-4 md:py-2">notes</div>
-		<div class="bg-red-200 px-3 py-1.5 shadow-[5px_5px_0_0_#44403b] md:px-4 md:py-2">intervals</div>
-		<div class="bg-yellow-200 px-3 py-1.5 shadow-[5px_5px_0_0_#44403b] md:px-4 md:py-2">keys</div>
-		<div class="bg-blue-200 px-3 py-1.5 shadow-[5px_5px_0_0_#44403b] md:px-4 md:py-2">modes</div>
-		<div class="bg-violet-200 px-3 py-1.5 shadow-[5px_5px_0_0_#44403b] md:px-4 md:py-2">
+		<div
+			class="bg-green-200 px-3 py-1.5 shadow-[5px_5px_0_0_var(--color-stone-600)] md:px-4 md:py-2"
+		>
+			notes
+		</div>
+		<div class="bg-red-200 px-3 py-1.5 shadow-[5px_5px_0_0_var(--color-stone-600)] md:px-4 md:py-2">
+			intervals
+		</div>
+		<div
+			class="bg-yellow-200 px-3 py-1.5 shadow-[5px_5px_0_0_var(--color-stone-600)] md:px-4 md:py-2"
+		>
+			keys
+		</div>
+		<div
+			class="bg-blue-200 px-3 py-1.5 shadow-[5px_5px_0_0_var(--color-stone-600)] md:px-4 md:py-2"
+		>
+			modes
+		</div>
+		<div
+			class="bg-violet-200 px-3 py-1.5 shadow-[5px_5px_0_0_var(--color-stone-600)] md:px-4 md:py-2"
+		>
 			enharmonics
 		</div>
 	</div>
 	<div class="text-center text-base sm:text-lg lg:text-xl xl:text-2xl">
-		while preserving semantic meaning in tonal music.
+		while preserving <span
+			class="underline decoration-stone-500 decoration-dotted underline-offset-4 sm:underline-offset-5 xl:underline-offset-6"
+			>semantic meaning</span
+		> in tonal music.
 	</div>
 </div>
 
