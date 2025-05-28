@@ -2,6 +2,7 @@
 
 @theme {
 	--font-sans: 'Galmuri', sans-serif;
+    --breakpoint-3xl: 106rem;
 }
 
 @font-face {

@@ -33,13 +33,13 @@ export function getRow(n: number) {
 }
 
 export const colours = [
-    'bg-[#ffb66c]',
-    'bg-[#729fcf]',
-    'bg-[#ff6d6d] text-white',
-    'bg-[#ffe994]',
-    'bg-[#e161a9] text-white',
-    'bg-[#85d171]',
-    'bg-[#8e86ae] text-white'
+    'bg-orange-200',
+    'bg-blue-300',
+    'bg-red-300',
+    'bg-yellow-200',
+    'bg-fuchsia-300',
+    'bg-green-300',
+    'bg-violet-300'
 ];
 export const letterName = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
 export const accidental = ['x', '#', '', 'b', 'bb'];
