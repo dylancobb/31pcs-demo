@@ -1,1 +1,11 @@
 @import 'tailwindcss';
+
+@theme {
+	--font-sans: 'Galmuri', sans-serif;
+}
+
+@font-face {
+	font-family: 'Galmuri';
+	font-display: swap;
+	src: url('/fonts/Galmuri7.ttf');
+}
