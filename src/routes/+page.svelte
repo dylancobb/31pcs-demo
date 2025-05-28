@@ -1,69 +1,37 @@
 <script lang="ts">
-	function getIndex(n: number) {
-		return (n + 29) % 31;
-	}
-	function getIndexFifths(n: number) {
-		return ((n + 29) * 19) % 31;
-	}
-	function getDiatonic(n: number) {
-		let index = getIndexFifths(n);
-		return (index * 4 + 4) % 7;
-	}
-	function getDiatonicFifths(n: number) {
-		let index = getIndexFifths(n);
-		return (index + 1) % 7;
-	}
-	function getChromatic(n: number) {
-		let index = getIndexFifths(n);
-		return (index * 7 + 5) % 12;
-	}
-	function getChromaticFifths(n: number) {
-		let index = getIndexFifths(n);
-		return (index + 11) % 12;
-	}
-	function isAboveBlackKey(n: number) {
-		let index = getChromaticFifths(n);
-		return index >= 6 && index <= 10;
-	}
-	function getRow(n: number) {
-		if (n > 25) return 0;
-		if (n > 18) return 1;
-		if (n > 11) return 2;
-		if (n > 4) return 3;
-		return 4;
-	}
-
-	const colours = [
-		'bg-[#ffb66c]',
-		'bg-[#729fcf]',
-		'bg-[#ff6d6d] text-white',
-		'bg-[#ffe994]',
-		'bg-[#e161a9] text-white',
-		'bg-[#85d171]',
-		'bg-[#8e86ae] text-white'
-	];
-	const letterName = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
-	const accidental = ['x', '#', '', 'b', 'bb'];
+	import {
+		getIndex,
+		getIndexFifths,
+		getDiatonic,
+		getDiatonicFifths,
+		getChromatic,
+		getChromaticFifths,
+		isAboveBlackKey,
+		getRow,
+		colours,
+		letterName,
+		accidental
+	} from '$lib/utils';
 </script>
 
 <div class="mt-24 flex flex-col gap-4">
 	<h1 class="text-center text-5xl">31-Tone Pitch Class Sets</h1>
 	<div class="text-center text-2xl">
-		a surprisingly simple system for representing, querying and manipulating:
+		a simple system for representing, querying and manipulating
 	</div>
 	<div class="flex justify-center gap-4 text-lg">
-		<div class="bg-green-200 px-4 py-2 shadow-[5px_5px_0_0_#444444]">notes</div>
-		<div class="bg-red-200 px-4 py-2 shadow-[5px_5px_0_0_#444444]">intervals</div>
-		<div class="bg-yellow-200 px-4 py-2 shadow-[5px_5px_0_0_#444444]">keys</div>
-		<div class="bg-blue-200 px-4 py-2 shadow-[5px_5px_0_0_#444444]">modes</div>
-		<div class="bg-purple-200 px-4 py-2 shadow-[5px_5px_0_0_#444444]">enharmonics</div>
+		<div class="bg-green-200 px-4 py-2 shadow-[5px_5px_0_0_#44403b]">notes</div>
+		<div class="bg-red-200 px-4 py-2 shadow-[5px_5px_0_0_#44403b]">intervals</div>
+		<div class="bg-yellow-200 px-4 py-2 shadow-[5px_5px_0_0_#44403b]">keys</div>
+		<div class="bg-blue-200 px-4 py-2 shadow-[5px_5px_0_0_#44403b]">modes</div>
+		<div class="bg-purple-200 px-4 py-2 shadow-[5px_5px_0_0_#44403b]">enharmonics</div>
 	</div>
-	<div class="text-center text-2xl">programmatically in a tonal context.</div>
+	<div class="text-center text-2xl">semantically in a tonal context.</div>
 </div>
 
-<div class="relative mx-auto mt-16 flex w-fit shadow-[10px_10px_0_0_#444444]">
+<div class="relative mx-auto mt-16 flex w-fit shadow-[10px_10px_0_0_#44403b]">
 	<div
-		class="flex flex-col border-4 border-r-0 border-stone-800 bg-stone-300 pt-7 text-center text-xl"
+		class="flex flex-col border-4 border-r-0 border-stone-700 bg-stone-300 pt-7 text-center text-xl"
 	>
 		<div class="h-8 bg-red-200 pl-1">x</div>
 		<div class="h-8 bg-orange-100 pl-1">#</div>
@@ -81,13 +49,13 @@
 		<div class="flex h-fit w-fit">
 			{#each { length: 8 }, index}
 				{#if index === 0}
-					<div class="-mr-1 h-112 w-45.5 border-4 border-stone-800 bg-white"></div>
+					<div class="-mr-1 h-112 w-45.5 border-4 border-stone-700 bg-white"></div>
 				{:else if [3, 4, 6].includes(index)}
-					<div class="-mr-1 h-112 w-45 border-4 border-stone-800 bg-white"></div>
+					<div class="-mr-1 h-112 w-45 border-4 border-stone-700 bg-white"></div>
 				{:else if index === 7}
-					<div class="-mr-1 h-112 w-34.5 border-4 border-stone-800 bg-white"></div>
+					<div class="-mr-1 h-112 w-34.5 border-4 border-stone-700 bg-white"></div>
 				{:else}
-					<div class="-mr-1 h-112 w-56 border-4 border-stone-800 bg-white"></div>
+					<div class="-mr-1 h-112 w-56 border-4 border-stone-700 bg-white"></div>
 				{/if}
 			{/each}
 		</div>
@@ -96,7 +64,7 @@
 				{#if index === 3}
 					<div class="-mr-0.5"></div>
 				{:else}
-					<div class="-mr-0.5 h-112 w-22 bg-stone-800"></div>
+					<div class="-mr-0.5 h-112 w-22 bg-stone-700"></div>
 				{/if}
 			{/each}
 		</div>
