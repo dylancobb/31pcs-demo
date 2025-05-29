@@ -7,7 +7,7 @@
 		getChromatic,
 		getChromaticFifths,
 		isAboveBlackKey,
-		getRow,
+		getAccidental,
 		colours,
 		letterName,
 		accidental
@@ -80,7 +80,7 @@
 				{#each { length: 5 }, row}
 					<tr class="3xl:h-8 h-6 2xl:h-7">
 						{#each Array.from({ length: 34 }, (_, i) => i + 29) as n}
-							{#if getRow(getIndexFifths(n)) === row}
+							{#if getAccidental(getIndexFifths(n)) === row}
 								<td class="3xl:w-11 w-6.5 xl:w-8 2xl:w-9 {colours[getDiatonic(n)]}"
 									>{letterName[getDiatonic(n)]}{accidental[row]}</td
 								>
