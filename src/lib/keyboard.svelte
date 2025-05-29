@@ -15,10 +15,10 @@
 </script>
 
 <div
-	class="relative mx-auto mt-16 flex w-fit max-w-[calc(100vw-4rem)] shadow-[10px_10px_0_0_var(--color-stone-500)]"
+	class="relative mx-auto mt-16 flex w-fit max-w-[calc(100vw-2rem)] shadow-[10px_10px_0_0_var(--color-stone-500)] sm:max-w-[calc(100vw-4rem)]"
 >
 	<div
-		class="3xl:text-lg flex flex-col border-4 border-r-0 border-stone-700 bg-stone-300 pt-5 text-sm 2xl:pt-7 2xl:text-base"
+		class="3xl:text-lg flex flex-col border-4 border-stone-700 bg-stone-300 pt-5 text-sm 2xl:pt-7 2xl:text-base"
 	>
 		<div class="3xl:h-8 flex h-6 items-center justify-center bg-red-200 pr-2 pl-3 2xl:h-7">x</div>
 		<div class="3xl:h-8 flex h-6 items-center justify-center bg-orange-100 pr-2 pl-3 2xl:h-7">
@@ -38,12 +38,12 @@
 		<div class="3xl:h-8 flex h-6 items-center justify-end pr-2 pl-3 text-right 2xl:h-7">12pcs</div>
 		<div class="3xl:h-8 flex h-6 items-center justify-end pr-2 pl-3 text-right 2xl:h-7">*12pcs</div>
 	</div>
-	<div class="relative h-fit w-fit overflow-scroll">
+	<div class="relative h-fit w-fit overflow-auto border-r-4 border-stone-700 lg:overflow-clip">
 		<div class="flex h-fit w-fit">
 			{#each { length: 8 }, index}
 				{#if index === 0}
 					<div
-						class="3xl:w-45.5 3xl:h-112 -mr-1 h-84 w-27.5 border-4 border-stone-700 bg-white xl:w-33.5 2xl:h-98 2xl:w-37.5"
+						class="3xl:w-44.5 3xl:h-112 -mr-1 h-84 w-26.5 border-4 border-l-0 border-stone-700 bg-white xl:w-32.5 2xl:h-98 2xl:w-36.5"
 					></div>
 				{:else if [3, 4, 6].includes(index)}
 					<div
@@ -51,7 +51,7 @@
 					></div>
 				{:else if index === 7}
 					<div
-						class="3xl:w-34.5 3xl:h-112 -mr-1 h-84 w-21 border-4 border-stone-700 bg-white xl:w-25.5 2xl:h-98 2xl:w-28.5"
+						class="3xl:w-33.5 3xl:h-112 -mr-1 h-84 w-20 border-4 border-r-0 border-stone-700 bg-white xl:w-24.5 2xl:h-98 2xl:w-27.5"
 					></div>
 				{:else}
 					<div
@@ -61,7 +61,7 @@
 			{/each}
 		</div>
 		<div
-			class="3xl:left-34 3xl:gap-33.5 absolute top-0 left-20.5 flex gap-20 xl:left-25 xl:gap-24.5 2xl:left-28 2xl:gap-27.5"
+			class="3xl:left-33 3xl:gap-33.5 absolute top-0 left-19.5 flex gap-20 xl:left-24 xl:gap-24.5 2xl:left-27 2xl:gap-27.5"
 		>
 			{#each { length: 6 }, index}
 				{#if index === 3}
@@ -74,7 +74,7 @@
 			{/each}
 		</div>
 		<table
-			class="3xl:text-lg absolute top-6 left-1 min-w-max text-center align-middle text-xs xl:text-sm 2xl:top-8 2xl:text-base"
+			class="3xl:text-lg absolute top-6 left-0 min-w-max text-center align-middle text-xs xl:text-sm 2xl:top-8 2xl:text-base"
 		>
 			<tbody>
 				{#each { length: 5 }, row}
@@ -132,10 +132,10 @@
 			</tbody>
 		</table>
 		<div
-			class="3xl:left-19.5 3xl:h-110 absolute top-1 left-10.5 h-82 w-4 border-r-3 border-dashed border-stone-500 xl:left-13.5 2xl:left-15.5 2xl:h-96"
+			class="3xl:left-18.5 3xl:h-110 absolute top-1 left-9.5 h-82 w-4 border-r-2 border-dashed border-stone-500 lg:border-r-3 xl:left-12.5 2xl:left-14.5 2xl:h-96"
 		></div>
 		<div
-			class="3xl:left-360.5 3xl:h-110 absolute top-1 left-212 h-82 w-4 border-r-3 border-dashed border-stone-500 xl:left-261.5 2xl:left-294.5 2xl:h-96"
+			class="3xl:left-359.5 3xl:h-110 absolute top-1 left-211 h-82 w-4 border-r-2 border-dashed border-stone-500 lg:border-r-3 xl:left-260.5 2xl:left-293.5 2xl:h-96"
 		></div>
 	</div>
 	<div class="absolute -bottom-12 text-xs md:text-sm xl:text-base">
