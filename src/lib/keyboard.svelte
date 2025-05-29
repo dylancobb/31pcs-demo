@@ -79,7 +79,7 @@
 			<tbody>
 				{#each { length: 5 }, row}
 					<tr class="3xl:h-8 h-6 2xl:h-7">
-						{#each { length: 34 }, n}
+						{#each Array.from({ length: 34 }, (_, i) => i + 29) as n}
 							{#if getRow(getIndexFifths(n)) === row}
 								<td class="3xl:w-11 w-6.5 xl:w-8 2xl:w-9 {colours[getDiatonic(n)]}"
 									>{letterName[getDiatonic(n)]}{accidental[row]}</td
@@ -93,37 +93,37 @@
 				<tr class="3xl:h-8 h-6 2xl:h-7"></tr>
 
 				<tr class="3xl:h-8 h-6 bg-stone-300 2xl:h-7">
-					{#each { length: 34 }, n}
+					{#each Array.from({ length: 34 }, (_, i) => i + 29) as n}
 						<td class="3xl:w-11 w-6.5 xl:w-8 2xl:w-9">{getIndex(n)}</td>
 					{/each}
 				</tr>
 				<tr class="3xl:h-8 h-6 bg-stone-300 2xl:h-7">
-					{#each { length: 34 }, n}
+					{#each Array.from({ length: 34 }, (_, i) => i + 29) as n}
 						<td class="3xl:w-11 w-6.5 xl:w-8 2xl:w-9">{getIndexFifths(n)}</td>
 					{/each}
 				</tr>
 				<tr class="3xl:h-8 h-6 2xl:h-7">
-					{#each { length: 34 }, n}
+					{#each Array.from({ length: 34 }, (_, i) => i + 29) as n}
 						<td class="3xl:w-11 w-6.5 xl:w-8 2xl:w-9 {colours[getDiatonic(n)]}">{getDiatonic(n)}</td
 						>
 					{/each}
 				</tr>
 				<tr class="3xl:h-8 h-6 2xl:h-7">
-					{#each { length: 34 }, n}
+					{#each Array.from({ length: 34 }, (_, i) => i + 29) as n}
 						<td class="3xl:w-11 w-6.5 xl:w-8 2xl:w-9 {colours[getDiatonic(n)]}"
 							>{getDiatonicFifths(n)}</td
 						>
 					{/each}
 				</tr>
 				<tr class="3xl:h-8 h-6 2xl:h-7">
-					{#each { length: 34 }, n}
+					{#each Array.from({ length: 34 }, (_, i) => i + 29) as n}
 						<td class="3xl:w-11 w-6.5 xl:w-8 2xl:w-9 {isAboveBlackKey(n) && 'text-white'}"
 							>{getChromatic(n)}</td
 						>
 					{/each}
 				</tr>
 				<tr class="3xl:h-8 h-6 2xl:h-7">
-					{#each { length: 34 }, n}
+					{#each Array.from({ length: 34 }, (_, i) => i + 29) as n}
 						<td class="3xl:w-11 w-6.5 xl:w-8 2xl:w-9 {isAboveBlackKey(n) && 'text-white'}"
 							>{getChromaticFifths(n)}</td
 						>
@@ -132,10 +132,10 @@
 			</tbody>
 		</table>
 		<div
-			class="3xl:left-18.5 3xl:h-110 absolute top-1 left-9.5 h-82 w-4 border-r-2 border-dashed border-stone-500 lg:border-r-3 xl:left-12.5 2xl:left-14.5 2xl:h-96"
+			class="3xl:left-18.5 3xl:h-110 absolute top-1 left-9.25 h-82 w-4 border-r-2 border-dashed border-stone-500 lg:border-r-3 xl:left-12.5 2xl:left-14.5 2xl:h-96"
 		></div>
 		<div
-			class="3xl:left-359.5 3xl:h-110 absolute top-1 left-211 h-82 w-4 border-r-2 border-dashed border-stone-500 lg:border-r-3 xl:left-260.5 2xl:left-293.5 2xl:h-96"
+			class="3xl:left-359.5 3xl:h-110 absolute top-1 left-210.75 h-82 w-4 border-r-2 border-dashed border-stone-500 lg:border-r-3 xl:left-260.5 2xl:left-293.5 2xl:h-96"
 		></div>
 	</div>
 	<div class="absolute -bottom-12 text-xs md:text-sm xl:text-base">* fifths-ordered numbering</div>

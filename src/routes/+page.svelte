@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Keyboard from '$lib/keyboard.svelte';
+	import Scales from '$lib/scales.svelte';
 </script>
 
 <div class="mt-24 flex flex-col items-center gap-4 text-center">
@@ -42,6 +43,8 @@
 
 <Keyboard />
 
+<Scales />
+
 <div
 	class="3xl:w-7xl mx-auto mb-16 flex w-full flex-col gap-6 px-4 pt-24 sm:px-8 md:gap-12 lg:w-4xl xl:w-5xl 2xl:w-6xl"
 >
@@ -63,18 +66,18 @@
 	<!-- 	> -->
 	<!-- </div> -->
 
-	<section
-		id="why"
-		class="flex w-full flex-col gap-2 border-4 border-stone-700 bg-white p-8 shadow-[5px_5px_0_0_var(--color-stone-500)]"
-	>
-		<h2 class="text-3xl">Why?</h2>
-		<p>todo</p>
-	</section>
-	<section
-		id="how"
-		class="flex w-full flex-col gap-2 border-4 border-stone-700 bg-white p-8 shadow-[5px_5px_0_0_var(--color-stone-500)]"
-	>
-		<h2 class="text-3xl">How?</h2>
-		<p>todo</p>
-	</section>
+	<!-- <section -->
+	<!-- 	id="why" -->
+	<!-- 	class="flex w-full flex-col gap-2 border-4 border-stone-700 bg-white p-8 shadow-[5px_5px_0_0_var(--color-stone-500)]" -->
+	<!-- > -->
+	<!-- 	<h2 class="text-3xl">Why?</h2> -->
+	<!-- 	<p>todo</p> -->
+	<!-- </section> -->
+	<!-- <section -->
+	<!-- 	id="how" -->
+	<!-- 	class="flex w-full flex-col gap-2 border-4 border-stone-700 bg-white p-8 shadow-[5px_5px_0_0_var(--color-stone-500)]" -->
+	<!-- > -->
+	<!-- 	<h2 class="text-3xl">How?</h2> -->
+	<!-- 	<p>todo</p> -->
+	<!-- </section> -->
 </div>

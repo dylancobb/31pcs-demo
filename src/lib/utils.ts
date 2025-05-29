@@ -1,8 +1,8 @@
 export function getIndex(n: number) {
-    return (n + 29) % 31;
+    return n % 31;
 }
 export function getIndexFifths(n: number) {
-    return ((n + 29) * 19) % 31;
+    return (n * 19) % 31;
 }
 export function getDiatonic(n: number) {
     let index = getIndexFifths(n);
@@ -41,5 +41,15 @@ export const colours = [
     'bg-green-300',
     'bg-violet-300'
 ];
+export const hoverColours = [
+    'hover:bg-orange-100',
+    'hover:bg-blue-200',
+    'hover:bg-red-200',
+    'hover:bg-yellow-100',
+    'hover:bg-fuchsia-200',
+    'hover:bg-green-200',
+    'hover:bg-violet-200'
+];
 export const letterName = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
+export const mode = ['Lydian', 'Major', 'Mixolydian', 'Dorian', 'Minor', 'Phrygian', 'Locrian'];
 export const accidental = ['x', '#', '', 'b', 'bb'];
