@@ -54,6 +54,15 @@ export const hoverColours = [
     'hover:bg-green-200',
     'hover:bg-violet-200'
 ];
+export const disabledColours = [
+    'disabled:bg-orange-800 disabled:text-white/50',
+    'disabled:bg-blue-800 disabled:text-white/50',
+    'disabled:bg-red-800 disabled:text-white/50',
+    'disabled:bg-yellow-800 disabled:text-white/50',
+    'disabled:bg-fuchsia-800 disabled:text-white/50',
+    'disabled:bg-green-800 disabled:text-white/50',
+    'disabled:bg-violet-800 disabled:text-white/50'
+];
 export const letterName = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
 export const mode = ['Lydian', 'Major', 'Mixolydian', 'Dorian', 'Minor', 'Phrygian', 'Locrian'];
 export const accidental = ['x', '#', '', 'b', 'bb'];

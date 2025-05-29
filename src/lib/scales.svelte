@@ -9,7 +9,8 @@
 		getIndexFifths,
 		getModalDegree,
 		mode,
-		hoverColours
+		hoverColours,
+		disabledColours
 	} from '$lib/utils';
 	import Button from './button.svelte';
 
@@ -51,12 +52,13 @@
 		<div class="flex w-fit justify-center">
 			{#each Array.from({ length: 31 }, (_, i) => getIndex(i * 18)) as n}
 				<button
-					class="3xl:w-11 3xl:h-8 flex h-6 w-6.5 items-center justify-center xl:w-8 2xl:h-7 2xl:w-9 {colours[
+					class="3xl:w-11 3xl:h-8 flex h-6 w-6.5 items-center justify-center transition-colors duration-300 xl:w-8 2xl:h-7 2xl:w-9 {colours[
 						getDiatonic(n)
-					]} {hoverColours[getDiatonic(n)]}"
+					]} {hoverColours[getDiatonic(n)]} {disabledColours[getDiatonic(n)]}"
 					onclick={() => {
 						setCenter(getIndexFifths(n));
 					}}
+					disabled={selectedMode < getIndexFifths(n) - 19 || selectedMode > getIndexFifths(n) - 5}
 				>
 					{letterName[getDiatonic(n)]}{accidental[getAccidental(getIndexFifths(n))]}
 				</button>
@@ -64,8 +66,8 @@
 		</div>
 	</div>
 	<div
-		class="relative -mt-1 flex w-fit border-4 shadow-[7px_7px_0_0_var(--color-stone-500)] transition-[left] duration-300"
-		style={`left: calc(${keyWindow} * ((100% - 0.5rem) / 31));`}
+		class="3xl:[--unit:2.75rem] relative -mt-1 flex w-fit border-4 border-t-0 shadow-[7px_7px_0_0_var(--color-stone-500)] transition-[left] duration-300 [--unit:1.625rem] xl:[--unit:2rem] 2xl:[--unit:2.25rem]"
+		style={`left: calc(${keyWindow} * var(--unit));`}
 	>
 		{#each Array.from({ length: 17 }, (_, i) => getIndex(i * 18 + 2)) as n}
 			<div
