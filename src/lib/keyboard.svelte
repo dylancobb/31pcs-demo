@@ -138,7 +138,5 @@
 			class="3xl:left-359.5 3xl:h-110 absolute top-1 left-211 h-82 w-4 border-r-2 border-dashed border-stone-500 lg:border-r-3 xl:left-260.5 2xl:left-293.5 2xl:h-96"
 		></div>
 	</div>
-	<div class="absolute -bottom-12 text-xs md:text-sm xl:text-base">
-		* ordered as a sequence of fifths
-	</div>
+	<div class="absolute -bottom-12 text-xs md:text-sm xl:text-base">* fifths-ordered numbering</div>
 </div>
