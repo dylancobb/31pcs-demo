@@ -10,14 +10,34 @@
 		getModalDegree,
 		mode,
 		hoverColours,
-		disabledColours
+		disabledColours,
+		getChromatic
 	} from '$lib/utils';
+	import { fade, fly } from 'svelte/transition';
 	import Button from './button.svelte';
 
 	let selectedMode = $state(1);
 	function setMode(n: number) {
 		selectedMode = n;
 	}
+	let degreeMatrix = $derived.by(() => {
+		let result = Array.from({ length: 17 }, (_, i) => getIndex(i * 18 + 2)).map((n) => {
+			return {
+				row: getAccidental(getIndexFifths(n)),
+				pc: (((getChromatic(n) - 7 * (selectedMode - 1)) % 12) + 12) % 12,
+				n: n,
+				degree: getModalDegree(n, selectedMode)
+			};
+		});
+
+		let matrix = Array.from({ length: 3 }, () => Array(12).fill(null));
+
+		for (const { row, pc, degree, n } of result) {
+			matrix[row - 1][pc] = { degree, pc, n };
+		}
+		return matrix;
+	});
+
 	function fuckLocrian(e: MouseEvent) {
 		const msg = document.createElement('div');
 		msg.textContent = 'No.';
@@ -42,7 +62,13 @@
 	let keyWindow = $derived(selectedCenter - selectedMode - 5);
 </script>
 
-<div class="mx-auto mt-24 mb-4 flex flex-wrap justify-center gap-4 px-4">
+<div class="mx-auto mt-24 mb-4 w-full text-center text-base sm:text-lg lg:text-xl xl:text-2xl">
+	{letterName[getDiatonic(selectedCenter * 18)]}{accidental[
+		getAccidental(getIndexFifths(selectedCenter * 18))
+	]}
+	{mode[selectedMode]}
+</div>
+<div class="mx-auto mb-4 flex flex-wrap justify-center gap-4 px-4">
 	{#each { length: 7 }, index}
 		<Button
 			colour={(index * 4 + 3) % 7}
@@ -95,9 +121,25 @@
 		{/each}
 	</div>
 </div>
-<div class="mx-auto w-full text-center">
-	Selected: {letterName[getDiatonic(selectedCenter * 18)]}{accidental[
-		getAccidental(getIndexFifths(selectedCenter * 18))
-	]}
-	{mode[selectedMode]}
-</div>
+<table
+	class="3xl:text-lg mx-auto mt-12 min-w-max text-center align-middle text-xs xl:text-sm 2xl:top-8 2xl:text-base"
+>
+	<tbody>
+		{#each { length: 3 }, row}
+			<tr class="3xl:h-8 h-6 2xl:h-7">
+				{#each { length: 13 }, col}
+					{#if degreeMatrix[row][col % 12]}
+						<td
+							in:fade
+							class="3xl:w-11 w-6.5 xl:w-8 2xl:w-9 {colours[
+								degreeMatrix[row][col % 12].degree - 1
+							]}">{accidental[row + 1]}{degreeMatrix[row][col % 12].degree}</td
+						>
+					{:else}
+						<td></td>
+					{/if}
+				{/each}
+			</tr>
+		{/each}
+	</tbody>
+</table>
