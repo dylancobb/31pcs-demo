@@ -20,12 +20,16 @@
 	function setMode(n: number) {
 		selectedMode = n;
 	}
+	let selectedCenter = $state(13);
+	function setCenter(n: number) {
+		selectedCenter = n;
+	}
 	let degreeMatrix = $derived.by(() => {
 		let result = Array.from({ length: 17 }, (_, i) => getIndex(i * 18 + 2)).map((n) => {
 			return {
 				row: getAccidental(getIndexFifths(n)),
 				pc: (((getChromatic(n) - 7 * (selectedMode - 1)) % 12) + 12) % 12,
-				n: n,
+				n: (getIndexFifths(n) + selectedCenter + 19 - selectedMode) % 31,
 				degree: getModalDegree(n, selectedMode)
 			};
 		});
@@ -52,11 +56,6 @@
 			msg.classList.add('opacity-0');
 			setTimeout(() => msg.remove(), 300);
 		}, 1000);
-	}
-
-	let selectedCenter = $state(13);
-	function setCenter(n: number) {
-		selectedCenter = n;
 	}
 
 	let keyWindow = $derived(selectedCenter - selectedMode - 5);
@@ -134,6 +133,31 @@
 							class="3xl:w-11 w-6.5 xl:w-8 2xl:w-9 {colours[
 								degreeMatrix[row][col % 12].degree - 1
 							]}">{accidental[row + 1]}{degreeMatrix[row][col % 12].degree}</td
+						>
+					{:else}
+						<td></td>
+					{/if}
+				{/each}
+			</tr>
+		{/each}
+	</tbody>
+</table>
+<table
+	class="3xl:text-lg mx-auto mt-12 min-w-max text-center align-middle text-xs xl:text-sm 2xl:top-8 2xl:text-base"
+>
+	<tbody>
+		{#each { length: 3 }, row}
+			<tr class="3xl:h-8 h-6 2xl:h-7">
+				{#each { length: 13 }, col}
+					{#if degreeMatrix[row][col % 12]}
+						<td
+							in:fade
+							class="3xl:w-11 w-6.5 xl:w-8 2xl:w-9 {colours[
+								degreeMatrix[row][col % 12].degree - 1
+							]}"
+							>{letterName[(degreeMatrix[row][col % 12].n * 4 + 4) % 7]}{accidental[
+								getAccidental(degreeMatrix[row][col % 12].n)
+							]}</td
 						>
 					{:else}
 						<td></td>
