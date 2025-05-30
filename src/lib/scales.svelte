@@ -56,7 +56,9 @@
 	let keyWindow = $derived(selectedCenter - selectedMode - 5);
 </script>
 
-<div class="mx-auto mt-12 mb-8 w-full text-center text-lg sm:text-xl lg:text-2xl xl:text-3xl">
+<div
+	class="mx-auto mt-12 mb-8 w-46 border-4 border-stone-600 bg-[#faf6ef] py-4 text-center text-lg shadow-[5px_5px_0_0_var(--color-stone-500)] sm:text-xl lg:w-53 lg:text-2xl xl:w-72 xl:text-3xl"
+>
 	{letterName[getDiatonic(selectedCenter * 18)]}{accidental[
 		getAccidental(getIndexFifths(selectedCenter * 18))
 	]}
