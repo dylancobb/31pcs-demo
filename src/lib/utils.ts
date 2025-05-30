@@ -35,6 +35,26 @@ export function getModalDegree(n: number, mode: number) {
     const index = getIndexFifths(n);
     return (index * 4 + mode * 3 + 1) % 7 + 1;
 }
+export function getQuality(n: number) {
+    if (n > 26) return "AAAA";
+    if (n > 19) return "AAA";
+    if (n > 12) return "AA";
+    if (n > 5) return "A";
+    if (n > 1) return "M";
+    if (n > -2) return "P";
+    if (n > -6) return "m";
+    if (n > -13) return "d";
+    if (n > -20) return "dd";
+    if (n > -27) return "ddd";
+    return "dddd"
+}
+export function getSize(n: number) {
+    const size = ((((n * 4) % 7) + 7) % 7) + 1;
+
+    if ((size === 1) && (n < -6))
+        return 8;
+    return size
+}
 
 export const colours = [
     'bg-orange-200',

@@ -17,13 +17,8 @@
 	import Button from './button.svelte';
 
 	let selectedMode = $state(1);
-	function setMode(n: number) {
-		selectedMode = n;
-	}
 	let selectedCenter = $state(13);
-	function setCenter(n: number) {
-		selectedCenter = n;
-	}
+
 	let degreeMatrix = $derived.by(() => {
 		let result = Array.from({ length: 17 }, (_, i) => getIndex(i * 18 + 2)).map((n) => {
 			return {
@@ -71,7 +66,11 @@
 	{#each { length: 7 }, index}
 		<Button
 			colour={(index * 4 + 3) % 7}
-			onclick={index === 6 ? (e: Event) => fuckLocrian(e) : () => setMode(index)}
+			onclick={index === 6
+				? (e: MouseEvent) => fuckLocrian(e)
+				: () => {
+						selectedMode = index;
+					}}
 			disabled={index < selectedCenter - 19 || index > selectedCenter - 5}>{mode[index]}</Button
 		>
 	{/each}
@@ -98,7 +97,7 @@
 					]} {hoverColours[getDiatonic(n)]} {disabledColours[getDiatonic(n)]} {selectedCenter ===
 						getIndexFifths(n) && 'border-4'}"
 					onclick={() => {
-						setCenter(getIndexFifths(n));
+						selectedCenter = getIndexFifths(n);
 					}}
 					disabled={selectedMode < getIndexFifths(n) - 19 || selectedMode > getIndexFifths(n) - 5}
 				>
