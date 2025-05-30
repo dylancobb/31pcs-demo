@@ -3,6 +3,10 @@
 	import Scales from '$lib/scales.svelte';
 </script>
 
+<svelte:head>
+	<title>31 Tone PCS</title>
+</svelte:head>
+
 <div class="mt-24 flex flex-col items-center gap-4 text-center">
 	<h1 class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl">31-Tone Pitch Class Sets</h1>
 	<div class="text-base sm:text-lg lg:text-xl xl:text-2xl">
