@@ -61,7 +61,7 @@
 	let keyWindow = $derived(selectedCenter - selectedMode - 5);
 </script>
 
-<div class="mx-auto mt-8 mb-8 w-full text-center text-lg sm:text-xl lg:text-2xl xl:text-3xl">
+<div class="mx-auto mt-12 mb-8 w-full text-center text-lg sm:text-xl lg:text-2xl xl:text-3xl">
 	{letterName[getDiatonic(selectedCenter * 18)]}{accidental[
 		getAccidental(getIndexFifths(selectedCenter * 18))
 	]}
@@ -145,7 +145,7 @@
 	</tbody>
 </table>
 <table
-	class="3xl:text-lg mx-auto mt-12 mb-24 min-w-max text-center align-middle text-xs xl:text-sm 2xl:top-8 2xl:text-base"
+	class="3xl:text-lg mx-auto mt-8 min-w-max text-center align-middle text-xs xl:text-sm 2xl:top-8 2xl:text-base"
 >
 	<tbody>
 		{#each { length: 3 }, row}
