@@ -18,10 +18,20 @@
 	function setMode(n: number) {
 		selectedMode = n;
 	}
-	function fuckLocrian(e: Event) {
-		e.target.remove();
-		document.getElementById('poop')?.classList.remove('hidden');
-		document.getElementById('poop')?.classList.add('flex');
+	function fuckLocrian(e: MouseEvent) {
+		const msg = document.createElement('div');
+		msg.textContent = 'No.';
+
+		// Tailwind classes for styling and animation
+		msg.className =
+			'absolute -top-8 left-1/2 -translate-x-1/2 bg-stone-600 text-white text-sm px-3 py-1 pointer-events-none opacity-100 transition-opacity duration-300';
+
+		e.target.appendChild(msg);
+
+		setTimeout(() => {
+			msg.classList.add('opacity-0');
+			setTimeout(() => msg.remove(), 300);
+		}, 1000);
 	}
 
 	let selectedCenter = $state(13);
@@ -40,12 +50,6 @@
 			disabled={index < selectedCenter - 19 || index > selectedCenter - 5}>{mode[index]}</Button
 		>
 	{/each}
-	<div
-		id="poop"
-		class="hidden h-8 w-19.25 items-center justify-center py-1.5 text-sm md:w-21.25 md:py-2 lg:w-23 lg:py-5 lg:text-base xl:w-24.75 xl:text-lg"
-	>
-		💩
-	</div>
 </div>
 <div
 	class="3xl:text-lg 3xl:h-28.5 mx-auto flex h-22.5 w-fit max-w-[calc(100vw-4rem)] flex-col overflow-auto text-xs xl:text-sm 2xl:h-25.5 2xl:text-base"
