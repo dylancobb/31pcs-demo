@@ -47,41 +47,66 @@
 
 <Keyboard />
 
+<div
+	class="3xl:w-7xl mx-auto flex w-full flex-col gap-6 px-4 pt-24 sm:px-8 md:gap-12 lg:w-4xl xl:w-5xl 2xl:w-6xl"
+>
+	<section
+		class="flex w-full flex-col gap-4 border-4 border-stone-400 bg-stone-600 p-8 text-white shadow-[7px_7px_0_0_var(--color-stone-500)]"
+	>
+		<h2 class="text-lg sm:text-xl lg:text-2xl xl:text-3xl">Keys / modes</h2>
+		<ul class="list-inside list-[square] text-sm lg:text-base xl:text-lg">
+			<li>
+				We define a key or mode as a sequence of 17 perfect fifths:
+				<ul class="list-inside list-[square] pl-4 text-sm lg:text-base xl:text-lg">
+					<li>7 diatonic scale degrees.</li>
+					<li>5 chromatically raised degrees.</li>
+					<li>5 chromatically lowered degrees.</li>
+				</ul>
+			</li>
+			<li>
+				This is because <span
+					class="underline decoration-stone-200 decoration-dotted underline-offset-4 sm:underline-offset-5 xl:underline-offset-6"
+					>well-behaved</span
+				>
+				chromatically altered notes resolve by
+				<span
+					class="underline decoration-stone-200 decoration-dotted underline-offset-4 sm:underline-offset-5 xl:underline-offset-6"
+					>diatonic half-step</span
+				> in the direction of their alteration. Any more notes would be enharmonic to diatonic scale
+				degrees, and have nowhere available to correctly resolve to.
+			</li>
+		</ul>
+	</section>
+</div>
+
 <Scales />
 
-<div
-	class="3xl:w-7xl mx-auto mb-16 flex w-full flex-col gap-6 px-4 pt-24 sm:px-8 md:gap-12 lg:w-4xl xl:w-5xl 2xl:w-6xl"
->
-	<!-- <div -->
-	<!-- 	class="flex w-full flex-col gap-2 border-4 border-stone-700 bg-white p-8 text-center shadow-[5px_5px_0_0_var(--color-stone-500)] sm:w-52 sm:text-left" -->
-	<!-- > -->
-	<!-- 	<h2 class="mb-2 text-center text-2xl">Contents</h2> -->
-	<!-- 	<a href="#why" class="hover:text-stone-300 hover:*:decoration-stone-300"> -->
-	<!-- 		<span -->
-	<!-- 			class="underline decoration-stone-500 decoration-dotted underline-offset-4 sm:underline-offset-5 xl:underline-offset-6" -->
-	<!-- 			>Why</span -->
-	<!-- 		>?</a -->
-	<!-- 	> -->
-	<!-- 	<a href="#how" class="hover:text-stone-300 hover:*:decoration-stone-300"> -->
-	<!-- 		<span -->
-	<!-- 			class="underline decoration-stone-500 decoration-dotted underline-offset-4 sm:underline-offset-5 xl:underline-offset-6" -->
-	<!-- 			>How</span -->
-	<!-- 		>?</a -->
-	<!-- 	> -->
-	<!-- </div> -->
-
-	<!-- <section -->
-	<!-- 	id="why" -->
-	<!-- 	class="flex w-full flex-col gap-2 border-4 border-stone-700 bg-white p-8 shadow-[5px_5px_0_0_var(--color-stone-500)]" -->
-	<!-- > -->
-	<!-- 	<h2 class="text-3xl">Why?</h2> -->
-	<!-- 	<p>todo</p> -->
-	<!-- </section> -->
-	<!-- <section -->
-	<!-- 	id="how" -->
-	<!-- 	class="flex w-full flex-col gap-2 border-4 border-stone-700 bg-white p-8 shadow-[5px_5px_0_0_var(--color-stone-500)]" -->
-	<!-- > -->
-	<!-- 	<h2 class="text-3xl">How?</h2> -->
-	<!-- 	<p>todo</p> -->
-	<!-- </section> -->
-</div>
+<!-- <div -->
+<!-- 	class="3xl:w-7xl mx-auto mb-16 flex w-full flex-col gap-6 px-4 pt-24 sm:px-8 md:gap-12 lg:w-4xl xl:w-5xl 2xl:w-6xl" -->
+<!-- > -->
+<!-- 	<div -->
+<!-- 		class="flex w-full flex-col gap-2 border-4 border-stone-700 bg-white p-8 text-center shadow-[5px_5px_0_0_var(--color-stone-500)] sm:w-52 sm:text-left" -->
+<!-- 	> -->
+<!-- 		<h2 class="mb-2 text-center text-2xl">Contents</h2> -->
+<!-- 		<a href="#why" class="hover:text-stone-300 hover:*:decoration-stone-300"> -->
+<!-- 			<span -->
+<!-- 				class="underline decoration-stone-500 decoration-dotted underline-offset-4 sm:underline-offset-5 xl:underline-offset-6" -->
+<!-- 				>Why</span -->
+<!-- 			>?</a -->
+<!-- 		> -->
+<!-- 		<a href="#how" class="hover:text-stone-300 hover:*:decoration-stone-300"> -->
+<!-- 			<span -->
+<!-- 				class="underline decoration-stone-500 decoration-dotted underline-offset-4 sm:underline-offset-5 xl:underline-offset-6" -->
+<!-- 				>How</span -->
+<!-- 			>?</a -->
+<!-- 		> -->
+<!-- 	</div> -->
+<!---->
+<!-- 	<section -->
+<!-- 		id="how" -->
+<!-- 		class="flex w-full flex-col gap-2 border-4 border-stone-700 bg-white p-8 shadow-[5px_5px_0_0_var(--color-stone-500)]" -->
+<!-- 	> -->
+<!-- 		<h2 class="text-3xl">How?</h2> -->
+<!-- 		<p>todo</p> -->
+<!-- 	</section> -->
+<!-- </div> -->

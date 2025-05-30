@@ -61,7 +61,7 @@
 	let keyWindow = $derived(selectedCenter - selectedMode - 5);
 </script>
 
-<div class="mx-auto mt-24 mb-8 w-full text-center text-lg sm:text-xl lg:text-2xl xl:text-3xl">
+<div class="mx-auto mt-8 mb-8 w-full text-center text-lg sm:text-xl lg:text-2xl xl:text-3xl">
 	{letterName[getDiatonic(selectedCenter * 18)]}{accidental[
 		getAccidental(getIndexFifths(selectedCenter * 18))
 	]}
@@ -77,9 +77,9 @@
 	{/each}
 </div>
 <div
-	class="3xl:text-lg 3xl:h-28.5 mx-auto flex h-22.5 w-fit max-w-[calc(100vw-4rem)] flex-col overflow-auto text-xs xl:text-sm 2xl:h-25.5 2xl:text-base"
+	class="3xl:text-lg 3xl:h-28.5 mx-auto flex h-22.5 w-fit max-w-[calc(100vw-4rem)] flex-col overflow-auto px-1.75 text-xs xl:text-sm 2xl:h-25.5 2xl:text-base"
 >
-	<div class="w-fit border-4 shadow-[7px_7px_0_0_var(--color-stone-500)]">
+	<div class="w-fit border-4 border-stone-700 shadow-[7px_7px_0_0_var(--color-stone-500)]">
 		<div class="flex w-fit justify-center bg-stone-300">
 			{#each Array.from({ length: 31 }, (_, i) => getIndex(i * 18)) as n}
 				<div
@@ -92,9 +92,11 @@
 		<div class="flex w-fit justify-center">
 			{#each Array.from({ length: 31 }, (_, i) => getIndex(i * 18)) as n}
 				<button
-					class="3xl:w-11 3xl:h-8 flex h-6 w-6.5 items-center justify-center transition-colors duration-300 xl:w-8 2xl:h-7 2xl:w-9 {colours[
+					class="3xl:w-11 3xl:h-8 flex h-6 w-6.5 items-center justify-center border-stone-700 transition-colors duration-300
+                    hover:cursor-pointer disabled:pointer-events-none xl:w-8 2xl:h-7 2xl:w-9 {colours[
 						getDiatonic(n)
-					]} {hoverColours[getDiatonic(n)]} {disabledColours[getDiatonic(n)]}"
+					]} {hoverColours[getDiatonic(n)]} {disabledColours[getDiatonic(n)]} {selectedCenter ===
+						getIndexFifths(n) && 'border-4'}"
 					onclick={() => {
 						setCenter(getIndexFifths(n));
 					}}
@@ -106,7 +108,7 @@
 		</div>
 	</div>
 	<div
-		class="3xl:[--unit:2.75rem] relative -mt-1 flex w-fit border-4 border-t-0 shadow-[7px_7px_0_0_var(--color-stone-500)] transition-[left] duration-300 [--unit:1.625rem] xl:[--unit:2rem] 2xl:[--unit:2.25rem]"
+		class="3xl:[--unit:2.75rem] relative -mt-1 flex w-fit border-4 border-t-0 border-stone-700 shadow-[7px_7px_0_0_var(--color-stone-500)] transition-[left] duration-300 [--unit:1.625rem] xl:[--unit:2rem] 2xl:[--unit:2.25rem]"
 		style={`left: calc(${keyWindow} * var(--unit));`}
 	>
 		{#each Array.from({ length: 17 }, (_, i) => getIndex(i * 18 + 2)) as n}
@@ -143,7 +145,7 @@
 	</tbody>
 </table>
 <table
-	class="3xl:text-lg mx-auto mt-12 min-w-max text-center align-middle text-xs xl:text-sm 2xl:top-8 2xl:text-base"
+	class="3xl:text-lg mx-auto mt-12 mb-24 min-w-max text-center align-middle text-xs xl:text-sm 2xl:top-8 2xl:text-base"
 >
 	<tbody>
 		{#each { length: 3 }, row}

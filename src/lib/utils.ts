@@ -25,11 +25,11 @@ export function isAboveBlackKey(n: number) {
     return index >= 6 && index <= 10;
 }
 export function getAccidental(n: number) {
-    if (n > 25) return 0;
-    if (n > 18) return 1;
-    if (n > 11) return 2;
-    if (n > 4) return 3;
-    return 4;
+    if (n > 25) return 0;   // double-sharp
+    if (n > 18) return 1;   // sharp
+    if (n > 11) return 2;   // natural
+    if (n > 4) return 3;    // flat
+    return 4;               // double-flat
 }
 export function getModalDegree(n: number, mode: number) {
     const index = getIndexFifths(n);
