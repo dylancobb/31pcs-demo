@@ -11,7 +11,7 @@
 					class="underline decoration-stone-200 decoration-dotted underline-offset-4 sm:underline-offset-5 xl:underline-offset-6"
 					>31-tone pitch-class numbers</span
 				>
-				(ordered in fifths such that Gbb = 0, F# = 1, Gb = 2 etc.) of two notes:
+				(ordered in fifths such that Gbb = 0, Dbb = 1, Abb = 2 etc.) of two notes:
 				<ul class="list-[square] pl-4">
 					<li>
 						M and N are congruent modulo 12 if and only if they are enharmonically equivalent.
